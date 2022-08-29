@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0ia!#8&y7wt3hw6o!9193$h%_6xd)d)y6^g&%9#6yqfp@)i+km'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*", "https://films-an.herokuapp.com/",]
+ALLOWED_HOSTS = ["*", "https://films-an.herokuapp.com/"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'movies',
 ]
 
 MIDDLEWARE = [
@@ -84,12 +85,6 @@ DATABASES = {
         "USER": "gqqhzkyccknezr",
         "PASSWORD": "87869980071733a09bb3943d212236e05594955ba005e4d66c2bb5b92d8e8f08",
         "PORT": "5432",
-
-        # Host: ec2-52-30-159-47.eu-west-1.compute.amazonaws.com
-        # Database: d37up976atnmvj
-        # User: gqqhzkyccknezr
-        # Port: 5432
-        # Password: 87869980071733a09bb3943d212236e05594955ba005e4d66c2bb5b92d8e8f08
     }
 }
 
