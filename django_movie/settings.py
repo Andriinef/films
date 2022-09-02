@@ -81,10 +81,10 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
 
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "HOST": "ec2-52-30-159-47.eu-west-1.compute.amazonaws.com",
-        "NAME": "d37up976atnmvj",
-        "USER": "gqqhzkyccknezr",
-        "PASSWORD": "87869980071733a09bb3943d212236e05594955ba005e4d66c2bb5b92d8e8f08",
+        "HOST": "0.0.0.0",
+        "NAME": "movies",
+        "USER": "postgres",
+        "PASSWORD": "5048",
         "PORT": "5432",
     }
 }
