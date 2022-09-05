@@ -33,7 +33,7 @@ class MoviesView(GenreYear, ListView):
     """Список фильмов"""
     model = Movie
     queryset = Movie.objects.filter(draft=False)
-    paginate_by = 1
+    paginate_by = 6
 
 
 class MovieDetailView(GenreYear, DetailView):
@@ -52,17 +52,16 @@ class MovieDetailView(GenreYear, DetailView):
 class AddReview(View):
     """Отзывы"""
 
-    # def post(self, request, pk):
-    #     form = ReviewForm(request.POST)
-    #     movie = Movie.objects.get(id=pk)
-    #     if form.is_valid():
-    #         form = form.save(commit=False)
-    #         if request.POST.get("parent", None):
-    #             form.parent_id = int(request.POST.get("parent"))
-    #         form.movie = movie
-    #         form.save()
-    #     return redirect(movie.get_absolute_url())
-    pass
+    def post(self, request, pk):
+        form = ReviewForm(request.POST)
+        movie = Movie.objects.get(id=pk)
+        if form.is_valid():
+            form = form.save(commit=False)
+            if request.POST.get("parent", None):
+                form.parent_id = int(request.POST.get("parent"))
+            form.movie = movie
+            form.save()
+        return redirect(movie.get_absolute_url())
 
 
 class ActorView(GenreYear, DetailView):
